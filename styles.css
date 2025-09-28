@@ -1,0 +1,1340 @@
+/* RESET AND BASE STYLES */
+/* Remove default browser styling from all elements */
+* {
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default padding */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* CSS Variables - Define reusable color values and properties */
+:root {
+  --primary: #4361ee; /* Main brand color - blue */
+  --secondary: #3a0ca3; /* Secondary brand color - darker blue */
+  --success: #4cc9f0; /* Success state color - light blue */
+  --warning: #f72585; /* Warning/error color - pink */
+  --info: #7209b7; /* Info state color - purple */
+  --light: #f8f9fa; /* Light background color */
+  --dark: #212529; /* Dark text color */
+  --gray: #6c757d; /* Medium gray for secondary text */
+  --light-gray: #e9ecef; /* Light gray for borders and backgrounds */
+  --white: #ffffff; /* Pure white */
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Standard shadow for cards */
+  --transition: all 0.3s ease; /* Standard transition timing */
+  --body-bg: #f5f7ff; /* Light blue background for body */
+  --card-bg: #ffffff; /* White background for cards */
+  --text-color: #212529; /* Default text color */
+  --border-color: #e9ecef; /* Default border color */
+}
+
+/* Body styling - applies to entire page */
+body {
+  font-family: "Poppins", sans-serif; /* Use Poppins font */
+  line-height: 1.6; /* Increase line spacing for readability */
+  color: var(--text-color); /* Set default text color */
+  background-color: var(--body-bg); /* Set page background color */
+  padding: 20px; /* Add padding around entire page */
+  transition: var(--transition); /* Smooth transitions when properties change */
+}
+
+/* Main container - centers content and limits width */
+.container {
+  max-width: 1200px; /* Don't exceed 1200px width */
+  margin: 0 auto; /* Center horizontally */
+  padding: 20px; /* Add internal padding */
+}
+
+/* Header section styling */
+header {
+  text-align: center; /* Center align text */
+  margin-bottom: 40px; /* Add space below header */
+}
+
+/* Main heading styling */
+h1 {
+  color: var(--primary); /* Use primary brand color */
+  margin-bottom: 10px; /* Add space below heading */
+  font-size: 2.5rem; /* Large font size */
+}
+
+/* Section heading styling */
+h2 {
+  color: var(--secondary); /* Use secondary brand color */
+  margin: 30px 0 15px; /* Add vertical margins */
+  padding-bottom: 10px; /* Add padding below text */
+  border-bottom: 2px solid var(--light-gray); /* Add underline border */
+}
+
+/* Subheading styling */
+h3 {
+  color: var(--info); /* Use info color */
+  margin: 20px 0 10px; /* Add vertical margins */
+}
+
+/* Paragraph styling */
+p {
+  margin-bottom: 20px; /* Add space below paragraphs */
+}
+
+/* Section container - creates card-like boxes for content */
+.section {
+  background-color: var(--card-bg); /* White background */
+  border-radius: 10px; /* Rounded corners */
+  padding: 25px; /* Internal padding */
+  margin-bottom: 30px; /* Space between sections */
+  box-shadow: var(--card-shadow); /* Drop shadow effect */
+}
+
+/* Grid layout for components - responsive columns */
+.component-grid {
+  display: grid; /* Use CSS Grid layout */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive columns, min 300px */
+  gap: 20px; /* Space between grid items */
+  margin-top: 20px; /* Space above grid */
+}
+
+/* DARK THEME OVERRIDES */
+/* Form controls in dark theme */
+.dark-theme .form-input,
+.dark-theme .form-select,
+.dark-theme .form-textarea {
+  background-color: #2d3748; /* Dark background */
+  color: #e2e8f0; /* Light text */
+  border-color: #4a5568; /* Dark border */
+}
+
+/* Table headers in dark theme */
+.dark-theme .table th {
+  background-color: #2d3748; /* Dark background for headers */
+}
+
+/* Code editor in dark theme */
+.dark-theme .code-editor {
+  background-color: #1a202c; /* Very dark background */
+}
+
+/* CARD STYLES */
+/* Card container - creates elevated content boxes */
+.card {
+  background-color: var(--card-bg); /* White background */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Hide content that exceeds boundaries */
+  box-shadow: var(--card-shadow); /* Drop shadow */
+  border: 1px solid var(--border-color); /* Subtle border */
+}
+
+/* Card hover effect - lifts card slightly */
+.card:hover {
+  transform: translateY(-2px); /* Move up 2px */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Larger shadow */
+}
+
+/* Card image styling */
+.card-img {
+  width: 100%; /* Full width of card */
+  height: 200px; /* Fixed height */
+  object-fit: cover; /* Crop image to fit without distortion */
+}
+
+/* Card content area */
+.card-content {
+  padding: 20px; /* Internal padding */
+}
+
+/* Card title styling */
+.card-title {
+  font-size: 1.2rem; /* Slightly larger text */
+  margin-bottom: 10px; /* Space below title */
+  color: var(--dark); /* Dark text color */
+}
+
+/* Card description text */
+.card-text {
+  color: var(--gray); /* Gray text for less emphasis */
+  margin-bottom: 15px; /* Space below text */
+}
+
+/* BUTTON STYLES */
+/* Base button styling - applies to all buttons */
+.btn {
+  display: inline-block; /* Inline element that accepts width/height */
+  padding: 10px 20px; /* Internal spacing */
+  background-color: var(--primary); /* Primary brand color background */
+  color: var(--white); /* White text */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Show pointer cursor on hover */
+  text-decoration: none; /* Remove underline if used as link */
+}
+
+/* Button hover effect */
+.btn:hover {
+  background-color: var(--secondary); /* Darker color on hover */
+}
+
+/* Disabled button styling */
+.btn:disabled {
+  opacity: 0.5; /* Make semi-transparent */
+  cursor: not-allowed; /* Show "not allowed" cursor */
+}
+
+/* Success button variant - green color */
+.btn-success {
+  background-color: var(--success); /* Success color background */
+}
+
+/* Warning button variant - red/pink color */
+.btn-warning {
+  background-color: var(--warning); /* Warning color background */
+}
+
+/* Info button variant - purple color */
+.btn-info {
+  background-color: var(--info); /* Info color background */
+}
+
+/* Outline button - hollow with colored border */
+.btn-outline {
+  background-color: transparent; /* No background */
+  border: 2px solid var(--primary); /* Colored border */
+  color: var(--primary); /* Colored text */
+}
+
+/* Outline button hover - fills with color */
+.btn-outline:hover {
+  background-color: var(--primary); /* Fill with primary color */
+  color: var(--white); /* White text */
+}
+
+/* Button group - horizontal layout of buttons */
+.btn-group {
+  display: flex; /* Flexbox layout */
+  gap: 10px; /* Space between buttons */
+  margin: 15px 0; /* Vertical margins */
+}
+
+/* CHIP STYLES */
+/* Container for chip elements */
+.chips-container {
+  display: flex; /* Flexbox layout */
+  flex-wrap: wrap; /* Allow wrapping to next line */
+  gap: 10px; /* Space between chips */
+  margin: 20px 0; /* Vertical margins */
+}
+
+/* Individual chip styling - small rounded elements */
+.chip {
+  display: flex; /* Flexbox for icon and text */
+  align-items: center; /* Vertically center content */
+  padding: 8px 15px; /* Internal padding */
+  background-color: var(--light-gray); /* Light gray background */
+  border-radius: 20px; /* Very rounded corners */
+  font-size: 14px; /* Smaller text */
+  color: var(--dark); /* Dark text */
+  cursor: pointer; /* Clickable cursor */
+}
+
+/* Active chip state - selected appearance */
+.chip.active {
+  background-color: var(--primary); /* Primary color background */
+  color: var(--white); /* White text */
+}
+
+/* Icon inside chip */
+.chip i {
+  margin-right: 5px; /* Space between icon and text */
+}
+
+/* Close button inside chip */
+.chip .close {
+  margin-left: 8px; /* Space before close button */
+  cursor: pointer; /* Clickable cursor */
+  font-weight: bold; /* Bold X symbol */
+}
+
+/* SLIDER STYLES */
+/* Container for slider and label */
+.slider-container {
+  margin: 20px 0; /* Vertical margins */
+}
+
+/* Range slider input styling */
+.slider {
+  -webkit-appearance: none; /* Remove default browser styling */
+  width: 100%; /* Full width */
+  height: 5px; /* Slider track height */
+  border-radius: 5px; /* Rounded track */
+  background: var(--light-gray); /* Light gray track */
+  outline: none; /* Remove focus outline */
+}
+
+/* Slider thumb (handle) styling for WebKit browsers */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove default styling */
+  appearance: none; /* Remove default styling */
+  width: 20px; /* Thumb width */
+  height: 20px; /* Thumb height */
+  border-radius: 50%; /* Make circular */
+  background: var(--primary); /* Primary color */
+  cursor: pointer; /* Clickable cursor */
+}
+
+/* Value display for slider */
+.slider-value {
+  text-align: right; /* Right align text */
+  font-weight: 500; /* Medium font weight */
+  color: var(--primary); /* Primary color text */
+  margin-top: 5px; /* Space above value */
+}
+
+/* SWITCH STYLES */
+/* Container for switch and label */
+.switch-container {
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Vertically center items */
+  margin: 15px 0; /* Vertical margins */
+}
+
+/* Switch toggle container */
+.switch {
+  position: relative; /* Relative positioning for child elements */
+  display: inline-block; /* Inline block element */
+  width: 50px; /* Switch width */
+  height: 24px; /* Switch height */
+  margin-right: 10px; /* Space before label */
+}
+
+/* Hide the actual checkbox input */
+.switch input {
+  opacity: 0; /* Make invisible */
+  width: 0; /* No width */
+  height: 0; /* No height */
+}
+
+/* Switch track background */
+.slider-round {
+  position: absolute; /* Absolute positioning */
+  cursor: pointer; /* Clickable cursor */
+  top: 0; /* Align to top */
+  left: 0; /* Align to left */
+  right: 0; /* Stretch to right */
+  bottom: 0; /* Stretch to bottom */
+  background-color: #ccc; /* Gray background when off */
+  border-radius: 24px; /* Rounded ends */
+}
+
+/* Switch handle (the sliding part) */
+.slider-round:before {
+  position: absolute; /* Absolute positioning */
+  content: ""; /* Empty content for pseudo-element */
+  height: 18px; /* Handle height */
+  width: 18px; /* Handle width */
+  left: 3px; /* Position from left */
+  bottom: 3px; /* Position from bottom */
+  background-color: white; /* White handle */
+  border-radius: 50%; /* Circular handle */
+}
+
+/* Switch track when checked/on */
+input:checked + .slider-round {
+  background-color: var(--primary); /* Primary color when on */
+}
+
+/* Switch handle position when checked/on */
+input:checked + .slider-round:before {
+  transform: translateX(26px); /* Move handle to right */
+}
+
+/* LIST STYLES */
+/* List container */
+.list {
+  list-style-type: none; /* Remove bullet points */
+  background-color: var(--card-bg); /* White background */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Hide overflowing content */
+  box-shadow: var(--card-shadow); /* Drop shadow */
+}
+
+/* Individual list item */
+.list-item {
+  padding: 15px 20px; /* Internal padding */
+  border-bottom: 1px solid var(--border-color); /* Bottom border */
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Vertically center content */
+  cursor: pointer; /* Clickable cursor */
+}
+
+/* Remove border from last list item */
+.list-item:last-child {
+  border-bottom: none; /* No bottom border */
+}
+
+/* List item hover effect */
+.list-item:hover {
+  background-color: var(--light); /* Light background on hover */
+}
+
+/* Icon in list item */
+.list-item i {
+  margin-right: 15px; /* Space after icon */
+  color: var(--gray); /* Gray icon color */
+}
+
+/* First span in list item (main text) */
+.list-item span:first-of-type {
+  flex: 1; /* Take up remaining space */
+}
+
+/* FORM STYLES */
+/* Form field container */
+.form-group {
+  margin-bottom: 20px; /* Space between form fields */
+}
+
+/* Form field label */
+.form-label {
+  display: block; /* Block element (full width) */
+  margin-bottom: 5px; /* Space below label */
+  font-weight: 500; /* Medium font weight */
+}
+
+/* Text input field */
+.form-input {
+  width: 100%; /* Full width */
+  padding: 10px; /* Internal padding */
+  border: 1px solid var(--border-color); /* Border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 14px; /* Text size */
+}
+
+/* Input field focus state */
+.form-input:focus {
+  outline: none; /* Remove default outline */
+  border-color: var(--primary); /* Primary color border */
+}
+
+/* Select dropdown styling */
+.form-select {
+  width: 100%; /* Full width */
+  padding: 10px; /* Internal padding */
+  border: 1px solid var(--border-color); /* Border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 14px; /* Text size */
+}
+
+/* Textarea field styling */
+.form-textarea {
+  width: 100%; /* Full width */
+  padding: 10px; /* Internal padding */
+  border: 1px solid var(--border-color); /* Border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 14px; /* Text size */
+  min-height: 100px; /* Minimum height */
+  resize: vertical; /* Allow vertical resizing only */
+  font-family: inherit; /* Use same font as parent */
+}
+
+/* TABLE STYLES */
+/* Table container for horizontal scrolling */
+.table-container {
+  overflow-x: auto; /* Horizontal scroll if needed */
+  margin: 20px 0; /* Vertical margins */
+}
+
+/* Table styling */
+.table {
+  width: 100%; /* Full width */
+  border-collapse: collapse; /* Merge borders */
+  background-color: var(--card-bg); /* White background */
+  border-radius: 5px; /* Rounded corners */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+/* Table cell styling (headers and data) */
+.table th,
+.table td {
+  padding: 12px; /* Internal padding */
+  text-align: left; /* Left align text */
+  border-bottom: 1px solid var(--border-color); /* Bottom border */
+}
+
+/* Table header styling */
+.table th {
+  background-color: var(--light); /* Light background */
+  font-weight: 600; /* Bold text */
+}
+
+/* Table row hover effect */
+.table tr:hover {
+  background-color: var(--light); /* Light background on hover */
+}
+
+/* BADGE STYLES */
+/* Badge/pill styling for status indicators */
+.badge {
+  display: inline-block; /* Inline block element */
+  padding: 4px 8px; /* Internal padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 12px; /* Small text */
+  font-weight: 500; /* Medium font weight */
+  margin-left: auto; /* Push to right side */
+}
+
+/* Primary badge color */
+.badge-primary {
+  background-color: var(--primary); /* Primary background */
+  color: var(--white); /* White text */
+}
+
+/* Success badge color */
+.badge-success {
+  background-color: #28a745; /* Green background */
+  color: var(--white); /* White text */
+}
+
+/* Warning badge color */
+.badge-warning {
+  background-color: #ffc107; /* Yellow background */
+  color: #212529; /* Dark text for contrast */
+}
+
+/* ALERT STYLES */
+/* Alert message container */
+.alert {
+  padding: 15px; /* Internal padding */
+  border-radius: 5px; /* Rounded corners */
+  margin-bottom: 20px; /* Space below alert */
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Vertically center content */
+  justify-content: space-between; /* Space between content and close button */
+}
+
+/* Alert icon */
+.alert i {
+  margin-right: 10px; /* Space after icon */
+}
+
+/* Alert content area */
+.alert-content {
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Vertically center content */
+  flex: 1; /* Take up remaining space */
+}
+
+/* Alert close button */
+.alert-close {
+  cursor: pointer; /* Clickable cursor */
+  font-weight: bold; /* Bold X symbol */
+}
+
+/* Success alert styling */
+.alert-success {
+  background-color: #d4edda; /* Light green background */
+  color: #155724; /* Dark green text */
+  border-left: 4px solid #28a745; /* Green left border */
+}
+
+/* Warning alert styling */
+.alert-warning {
+  background-color: #fff3cd; /* Light yellow background */
+  color: #856404; /* Dark yellow/brown text */
+  border-left: 4px solid #ffc107; /* Yellow left border */
+}
+
+/* Info alert styling */
+.alert-info {
+  background-color: #d1ecf1; /* Light blue background */
+  color: #0c5460; /* Dark blue text */
+  border-left: 4px solid #17a2b8; /* Blue left border */
+}
+
+/* NAVIGATION STYLES */
+/* Navigation bar container */
+.nav {
+  display: flex; /* Flexbox layout */
+  background-color: var(--card-bg); /* White background */
+  border-radius: 5px; /* Rounded corners */
+  overflow: hidden; /* Hide overflowing content */
+  margin-bottom: 30px; /* Space below navigation */
+  box-shadow: var(--card-shadow); /* Drop shadow */
+}
+
+/* Navigation item/link */
+.nav-item {
+  padding: 15px 20px; /* Internal padding */
+  color: var(--gray); /* Gray text */
+  text-decoration: none; /* Remove underline */
+  border-bottom: 3px solid transparent; /* Invisible bottom border */
+}
+
+/* Navigation item hover effect */
+.nav-item:hover {
+  background-color: var(--light); /* Light background */
+}
+
+/* Active navigation item */
+.nav-item.active {
+  background-color: var(--primary); /* Primary background */
+  color: var(--white); /* White text */
+}
+
+/* PROGRESS BAR STYLES */
+/* Progress bar container/track */
+.progress {
+  height: 8px; /* Track height */
+  background-color: var(--light-gray); /* Light gray background */
+  border-radius: 4px; /* Rounded corners */
+  margin: 15px 0; /* Vertical margins */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+/* Progress bar fill */
+.progress-bar {
+  height: 100%; /* Full height of container */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Primary progress bar color */
+.progress-primary {
+  background-color: var(--primary); /* Primary color fill */
+}
+
+/* Success progress bar color */
+.progress-success {
+  background-color: var(--success); /* Success color fill */
+}
+
+/* PAGINATION STYLES */
+/* Pagination container */
+.pagination {
+  display: flex; /* Flexbox layout */
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 20px 0; /* Vertical margins */
+}
+
+/* Pagination item */
+.page-item {
+  margin-right: 5px; /* Space between items */
+}
+
+/* Pagination link */
+.page-link {
+  display: block; /* Block element */
+  padding: 8px 12px; /* Internal padding */
+  border: 1px solid var(--border-color); /* Border */
+  border-radius: 3px; /* Rounded corners */
+  color: var(--primary); /* Primary color text */
+  text-decoration: none; /* Remove underline */
+  cursor: pointer; /* Clickable cursor */
+}
+
+/* Pagination link hover effect */
+.page-link:hover {
+  background-color: var(--light); /* Light background */
+}
+
+/* Active pagination item */
+.page-item.active .page-link {
+  background-color: var(--primary); /* Primary background */
+  color: var(--white); /* White text */
+  border-color: var(--primary); /* Primary border */
+}
+
+/* BREADCRUMB STYLES */
+/* Breadcrumb navigation container */
+.breadcrumb {
+  display: flex; /* Flexbox layout */
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 20px 0; /* Vertical margins */
+}
+
+/* Breadcrumb item */
+.breadcrumb-item {
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Vertically center content */
+}
+
+/* Breadcrumb separator - adds "/" between items */
+.breadcrumb-item:not(:last-child)::after {
+  content: "/"; /* Forward slash separator */
+  margin: 0 10px; /* Horizontal margins */
+  color: var(--gray); /* Gray separator */
+}
+
+/* Breadcrumb link */
+.breadcrumb-link {
+  color: var(--primary); /* Primary color text */
+  text-decoration: none; /* Remove underline */
+  cursor: pointer; /* Clickable cursor */
+}
+
+/* Breadcrumb link hover effect */
+.breadcrumb-link:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Active/current breadcrumb item */
+.breadcrumb-item.active {
+  color: var(--gray); /* Gray text (not clickable) */
+}
+
+/* MODAL STYLES */
+/* Modal overlay - covers entire screen */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed positioning */
+  top: 0; /* Top of screen */
+  left: 0; /* Left of screen */
+  width: 100%; /* Full screen width */
+  height: 100%; /* Full screen height */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: 1000; /* High z-index to appear above other content */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+/* Modal content box */
+.modal-content {
+  background-color: var(--card-bg); /* White background */
+  border-radius: 5px; /* Rounded corners */
+  width: 90%; /* 90% of screen width */
+  max-width: 500px; /* Maximum width */
+  padding: 20px; /* Internal padding */
+}
+
+/* Modal header */
+.modal-header {
+  display: flex; /* Flexbox layout */
+  justify-content: space-between; /* Space between title and close button */
+  align-items: center; /* Vertically center content */
+  margin-bottom: 20px; /* Space below header */
+}
+
+/* Modal title */
+.modal-title {
+  font-size: 1.5rem; /* Large text */
+  color: var(--dark); /* Dark text */
+  margin: 0; /* Remove default margin */
+}
+
+/* Modal close button */
+.modal-close {
+  background: none; /* No background */
+  border: none; /* No border */
+  font-size: 24px; /* Large text */
+  cursor: pointer; /* Clickable cursor */
+  color: var(--gray); /* Gray color */
+}
+
+/* TOOLTIP STYLES */
+/* Tooltip trigger element */
+.tooltip {
+  position: relative; /* Relative positioning for tooltip */
+  display: inline-block; /* Inline block element */
+  border-bottom: 1px dotted var(--primary); /* Dotted underline */
+  cursor: help; /* Help cursor */
+}
+
+/* Tooltip text content */
+.tooltip .tooltip-text {
+  visibility: hidden; /* Hidden by default */
+  width: 120px; /* Tooltip width */
+  background-color: var(--dark); /* Dark background */
+  color: var(--white); /* White text */
+  text-align: center; /* Center text */
+  border-radius: 6px; /* Rounded corners */
+  padding: 5px; /* Internal padding */
+  position: absolute; /* Absolute positioning */
+  z-index: 1; /* Above other content */
+  bottom: 125%; /* Position above trigger */
+  left: 50%; /* Center horizontally */
+  margin-left: -60px; /* Offset for centering */
+  opacity: 0; /* Transparent by default */
+}
+
+/* Tooltip arrow pointing down */
+.tooltip .tooltip-text::after {
+  content: ""; /* Empty content for arrow */
+  position: absolute; /* Absolute positioning */
+  top: 100%; /* Below tooltip */
+  left: 50%; /* Center horizontally */
+  margin-left: -5px; /* Offset for centering */
+  border-width: 5px; /* Arrow size */
+  border-style: solid; /* Solid border */
+  border-color: var(--dark) transparent transparent transparent; /* Arrow pointing down */
+}
+
+/* Show tooltip on hover */
+.tooltip:hover .tooltip-text {
+  visibility: visible; /* Make visible */
+  opacity: 1; /* Make opaque */
+}
+
+/* ACCORDION STYLES */
+/* Accordion container */
+.accordion {
+  margin: 20px 0; /* Vertical margins */
+}
+
+/* Individual accordion item */
+.accordion-item {
+  border: 1px solid var(--border-color); /* Border around item */
+  border-radius: 5px; /* Rounded corners */
+  margin-bottom: 10px; /* Space between items */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+/* Accordion header/trigger */
+.accordion-header {
+  padding: 15px; /* Internal padding */
+  background-color: var(--light); /* Light background */
+  cursor: pointer; /* Clickable cursor */
+  display: flex; /* Flexbox layout */
+  justify-content: space-between; /* Space between title and icon */
+  align-items: center; /* Vertically center content */
+}
+
+/* Accordion content area */
+.accordion-content {
+  padding: 0 15px; /* Horizontal padding only */
+  max-height: 0; /* Collapsed by default */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+/* Expanded accordion content */
+.accordion-content.active {
+  padding: 15px; /* Full padding when expanded */
+  max-height: 200px; /* Allow content to show */
+}
+
+/* TABS STYLES */
+/* Tab container */
+.tabs {
+  margin: 30px 0; /* Vertical margins */
+}
+
+/* Tab header/navigation */
+.tab-header {
+  display: flex; /* Flexbox layout */
+  border-bottom: 1px solid var(--border-color); /* Bottom border */
+}
+
+/* Individual tab link */
+.tab-link {
+  padding: 15px 20px; /* Internal padding */
+  cursor: pointer; /* Clickable cursor */
+  border-bottom: 3px solid transparent; /* Invisible bottom border */
+}
+
+/* Tab link hover effect */
+.tab-link:hover {
+  color: var(--primary); /* Primary color text */
+}
+
+/* Active tab link */
+.tab-link.active {
+  color: var(--primary); /* Primary color text */
+  border-bottom-color: var(--primary); /* Primary color bottom border */
+}
+
+/* Tab content area */
+.tab-content {
+  padding: 20px 0; /* Vertical padding */
+}
+
+/* Individual tab pane */
+.tab-pane {
+  display: none; /* Hidden by default */
+}
+
+/* Active tab pane */
+.tab-pane.active {
+  display: block; /* Show active pane */
+}
+
+/* DROPDOWN STYLES */
+/* Dropdown container */
+.dropdown {
+  position: relative; /* Relative positioning for dropdown menu */
+  display: inline-block; /* Inline block element */
+}
+
+/* Dropdown trigger button */
+.dropdown-toggle {
+  padding: 10px 20px; /* Internal padding */
+  background-color: var(--primary); /* Primary background */
+  color: var(--white); /* White text */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Clickable cursor */
+}
+
+/* Dropdown arrow indicator */
+.dropdown-toggle::after {
+  content: "▼"; /* Down arrow character */
+  margin-left: 8px; /* Space before arrow */
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute; /* Absolute positioning */
+  top: 100%; /* Below trigger button */
+  left: 0; /* Align to left of trigger */
+  background-color: var(--card-bg); /* White background */
+  border: 1px solid var(--border-color); /* Border */
+  border-radius: 5px; /* Rounded corners */
+  min-width: 150px; /* Minimum width */
+  z-index: 1000; /* High z-index */
+  display: none; /* Hidden by default */
+}
+
+/* Show dropdown menu */
+.dropdown-menu.show {
+  display: block; /* Make visible */
+}
+
+/* Dropdown menu item */
+.dropdown-item {
+  padding: 10px 15px; /* Internal padding */
+  display: block; /* Block element */
+  color: var(--dark); /* Dark text */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Dropdown item hover effect */
+.dropdown-item:hover {
+  background-color: var(--light); /* Light background */
+}
+
+/* TOAST STYLES */
+/* Toast notification container */
+.toast-container {
+  position: fixed; /* Fixed positioning */
+  bottom: 20px; /* 20px from bottom */
+  right: 20px; /* 20px from right */
+  z-index: 1000; /* High z-index */
+}
+
+/* Individual toast notification */
+.toast {
+  padding: 15px; /* Internal padding */
+  background-color: var(--card-bg); /* White background */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Drop shadow */
+  margin-bottom: 10px; /* Space between toasts */
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Vertically center content */
+  justify-content: space-between; /* Space between content and close button */
+  min-width: 250px; /* Minimum width */
+  transform: translateX(300px); /* Start off-screen to the right */
+  opacity: 0; /* Start transparent */
+}
+
+/* Show toast animation */
+.toast.show {
+  transform: translateX(0); /* Move to normal position */
+  opacity: 1; /* Make opaque */
+}
+
+/* Success toast styling */
+.toast-success {
+  border-left: 4px solid #28a745; /* Green left border */
+}
+
+/* Warning toast styling */
+.toast-warning {
+  border-left: 4px solid var(--warning); /* Warning color left border */
+}
+
+/* Info toast styling */
+.toast-info {
+  border-left: 4px solid var(--info); /* Info color left border */
+}
+
+/* Toast close button */
+.toast-close {
+  cursor: pointer; /* Clickable cursor */
+  font-weight: bold; /* Bold X symbol */
+  margin-left: 15px; /* Space before close button */
+}
+
+/* CODE EDITOR STYLES */
+/* Code editor container */
+.code-editor {
+  background-color: #f8f9fa; /* Light gray background */
+  border-radius: 5px; /* Rounded corners */
+  padding: 20px; /* Internal padding */
+  margin: 20px 0; /* Vertical margins */
+  font-family: 'Courier New', monospace; /* Monospace font for code */
+  color: var(--dark); /* Dark text */
+  overflow-x: auto; /* Horizontal scroll if needed */
+}
+
+/* Code comments styling */
+.code-comment {
+  color: #6a737d; /* Gray color for comments */
+}
+
+/* CSS selector styling */
+.code-selector {
+  color: #d73a49; /* Red color for selectors */
+}
+
+/* CSS property styling */
+.code-property {
+  color: #005cc5; /* Blue color for properties */
+}
+
+/* CSS value styling */
+.code-value {
+  color: #032f62; /* Dark blue for values */
+}
+
+/* CUSTOMIZATION PANEL STYLES */
+/* Panel header with title and close button */
+.panel-header {
+  display: flex; /* Flexbox layout */
+  justify-content: space-between; /* Space between title and close button */
+  align-items: center; /* Vertically center content */
+  margin-bottom: 20px; /* Space below header */
+  border-bottom: 1px solid var(--border-color); /* Bottom border */
+  padding-bottom: 15px; /* Padding below content */
+}
+
+/* Panel close button */
+.panel-close {
+  background: none; /* No background */
+  border: none; /* No border */
+  font-size: 24px; /* Large text */
+  cursor: pointer; /* Clickable cursor */
+  color: var(--gray); /* Gray color */
+}
+
+/* Pull tab that appears when panel is closed */
+.panel-pull-tab {
+  position: fixed; /* Fixed positioning */
+  top: 50%; /* Middle of screen vertically */
+  left: 0; /* Left edge of screen */
+  transform: translateY(-50%); /* Center vertically */
+  background-color: var(--primary); /* Primary color background */
+  color: var(--white); /* White text */
+  padding: 10px 8px; /* Internal padding */
+  border-radius: 0 5px 5px 0; /* Rounded right corners only */
+  cursor: pointer; /* Clickable cursor */
+  z-index: 999; /* High z-index */
+  display: none; /* Hidden by default */
+}
+
+/* Main customization panel */
+.customization-panel {
+  position: fixed; /* Fixed positioning */
+  top: 0; /* Top of screen */
+  left: 0; /* Left of screen */
+  width: 300px; /* Panel width */
+  height: 100vh; /* Full screen height */
+  background-color: var(--card-bg); /* White background */
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Right shadow */
+  padding: 20px; /* Internal padding */
+  overflow-y: auto; /* Vertical scroll if needed */
+  transform: translateX(-100%); /* Start off-screen to the left */
+  z-index: 1000; /* High z-index */
+}
+
+/* Open state for customization panel */
+.customization-panel.open {
+  transform: translateX(0); /* Move to normal position */
+}
+
+/* Panel toggle button */
+.panel-toggle {
+  position: fixed; /* Fixed positioning */
+  top: 20px; /* 20px from top */
+  right: 20px; /* 20px from right */
+  z-index: 101; /* Above other content */
+  padding: 10px 15px; /* Internal padding */
+  background-color: var(--primary); /* Primary background */
+  color: var(--white); /* White text */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Clickable cursor */
+}
+
+/* Color option circles for theme selection */
+.color-option {
+  width: 25px; /* Circle width */
+  height: 25px; /* Circle height */
+  border-radius: 50%; /* Make circular */
+  display: inline-block; /* Inline block element */
+  margin: 5px; /* Margins around circle */
+  cursor: pointer; /* Clickable cursor */
+  border: 2px solid transparent; /* Invisible border by default */
+}
+
+/* Active color option styling */
+.color-option.active {
+  border-color: var(--dark); /* Dark border when selected */
+}
+
+/* INTERACTIVE WIDGETS STYLES */
+/* Widget grid container */
+.interactive-widgets {
+  display: grid; /* CSS Grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+  gap: 20px; /* Space between widgets */
+  margin-bottom: 40px; /* Space below widget grid */
+}
+
+/* Individual widget styling */
+.widget {
+  background-color: var(--card-bg); /* White background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: var(--card-shadow); /* Drop shadow */
+  padding: 20px; /* Internal padding */
+  display: flex; /* Flexbox layout */
+  align-items: flex-start; /* Align items to top */
+}
+
+/* Widget hover effect */
+.widget:hover {
+  transform: translateY(-2px); /* Lift slightly on hover */
+}
+
+/* Widget icon styling */
+.widget i {
+  font-size: 24px; /* Large icon */
+  color: var(--primary); /* Primary color */
+  margin-right: 15px; /* Space after icon */
+  margin-top: 5px; /* Slight top margin for alignment */
+}
+
+/* Widget content area */
+.widget-content {
+  flex: 1; /* Take up remaining space */
+}
+
+/* Widget heading */
+.widget h3 {
+  margin-top: 0; /* Remove top margin */
+  margin-bottom: 15px; /* Space below heading */
+  color: var(--dark); /* Dark text */
+  font-size: 1.1rem; /* Slightly larger text */
+}
+
+/* RESPONSIVE DESIGN */
+/* Mobile and tablet styles - screens smaller than 768px */
+@media (max-width: 768px) {
+  /* Make component grid single column on mobile */
+  .component-grid {
+    grid-template-columns: 1fr; /* Single column */
+  }
+
+  /* Stack buttons vertically on mobile */
+  .btn-group {
+    flex-direction: column; /* Vertical stacking */
+  }
+
+  /* Stack navigation items vertically on mobile */
+  .nav {
+    flex-direction: column; /* Vertical stacking */
+  }
+
+  /* Stack tab links vertically on mobile */
+  .tab-header {
+    flex-direction: column; /* Vertical stacking */
+  }
+
+  /* Make widget grid single column on mobile */
+  .interactive-widgets {
+    grid-template-columns: 1fr; /* Single column */
+  }
+
+  /* Reduce panel width on mobile */
+  .customization-panel {
+    width: 280px; /* Smaller width for mobile */
+  }
+}
+
+/* PRESERVED WIDGET STYLES - These styles are for the interactive widgets */
+
+/* Clock Widget Styles */
+/* Digital clock display */
+#clock {
+  font-size: 2rem; /* Large text for time */
+  font-weight: 600; /* Bold font */
+  color: var(--primary); /* Primary color text */
+  margin: 10px 0; /* Vertical margins */
+}
+
+/* Clock type toggle buttons container */
+.clock-toggle {
+  display: flex; /* Flexbox layout */
+  margin-top: 10px; /* Space above toggle */
+  border-radius: 5px; /* Rounded corners */
+  overflow: hidden; /* Hide overflowing content */
+  width: fit-content; /* Width based on content */
+}
+
+/* Individual clock toggle button */
+.clock-toggle-btn {
+  padding: 5px 10px; /* Small padding */
+  background-color: var(--light-gray); /* Light gray background */
+  border: none; /* No border */
+  cursor: pointer; /* Clickable cursor */
+  font-size: 0.8rem; /* Small text */
+}
+
+/* Active clock toggle button */
+.clock-toggle-btn.active {
+  background-color: var(--primary); /* Primary background */
+  color: var(--white); /* White text */
+}
+
+/* Analog clock container */
+#analog-clock-container {
+  display: flex; /* Flexbox layout */
+  justify-content: center; /* Center horizontally */
+  margin-top: 10px; /* Space above analog clock */
+}
+
+/* Analog clock canvas */
+#analog-clock {
+  width: 150px; /* Fixed width */
+  height: 150px; /* Fixed height */
+}
+
+/* Date display */
+#date {
+  color: var(--gray); /* Gray text for date */
+}
+
+/* Calendar Widget Styles */
+/* Current month display */
+#current-month {
+  font-weight: 600; /* Bold text */
+  color: var(--primary); /* Primary color */
+  margin-bottom: 10px; /* Space below month */
+}
+
+/* Mini calendar grid */
+.mini-calendar {
+  display: grid; /* CSS Grid layout */
+  grid-template-columns: repeat(7, 1fr); /* 7 equal columns for days */
+  gap: 5px; /* Small gap between cells */
+}
+
+/* Individual calendar day cell */
+.calendar-day {
+  width: 30px; /* Fixed width */
+  height: 30px; /* Fixed height */
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  border-radius: 50%; /* Circular cells */
+  font-size: 0.9rem; /* Small text */
+}
+
+/* Current day highlighting */
+.calendar-day.current {
+  background-color: var(--primary); /* Primary background */
+  color: white; /* White text */
+  font-weight: bold; /* Bold text */
+}
+
+/* Day name headers (Mon, Tue, etc.) */
+.calendar-day.day-name {
+  font-weight: bold; /* Bold text */
+  color: var(--dark); /* Dark text */
+}
+
+/* Mood Widget Styles */
+/* Mood emoji container */
+.mood-tracker {
+  display: flex; /* Flexbox layout */
+  justify-content: space-between; /* Equal spacing between emojis */
+  margin: 15px 0; /* Vertical margins */
+}
+
+/* Individual mood emoji */
+.mood-emoji {
+  font-size: 1.8rem; /* Large emoji size */
+  cursor: pointer; /* Clickable cursor */
+}
+
+/* Mood emoji hover effect */
+.mood-emoji:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Mood response text */
+#mood-response {
+  text-align: center; /* Center text */
+  font-size: 0.9rem; /* Small text */
+  color: var(--gray); /* Gray text */
+  height: 20px; /* Fixed height to prevent layout shift */
+}
+
+/* FOOTER STYLES */
+/* Footer container */
+.footer {
+  margin-top: 50px; /* Large top margin */
+  padding: 20px 0; /* Vertical padding */
+  background-color: var(--card-bg); /* White background */
+  border-top: 1px solid var(--border-color); /* Top border */
+  text-align: center; /* Center text */
+}
+
+/* Footer content container */
+.footer-container {
+  padding: 0 20px; /* Horizontal padding */
+}
+
+/* Footer text */
+.footer p {
+  color: var(--text-color); /* Default text color */
+  font-size: 0.9rem; /* Small text */
+  margin: 0; /* Remove default margin */
+}
+
+/* CHALLENGE INSTRUCTIONS SECTION */
+/* Special styling for the instructions section */
+.instruction-section {
+  border-left: 4px solid var(--primary); /* Primary color left border */
+  background-color: rgba(67, 97, 238, 0.05); /* Very light primary background */
+}
+
+/* Instructions section heading */
+.instruction-section h2 {
+  color: var(--primary); /* Primary color text */
+  font-size: 1.6rem; /* Large text */
+  border-bottom: 2px solid var(--primary); /* Primary underline */
+  padding-bottom: 12px; /* Space below text */
+  margin-bottom: 20px; /* Space below heading */
+}
+
+/* Instructions ordered list */
+.instruction-section ol {
+  padding-left: 1.5rem; /* Indent list */
+  margin: 1.5rem 0; /* Vertical margins */
+}
+
+/* Instructions list items */
+.instruction-section li {
+  margin-bottom: 12px; /* Space between items */
+  padding-left: 10px; /* Extra left padding */
+}
+
+/* Strong text in instructions */
+.instruction-section strong {
+  color: var(--primary); /* Primary color for emphasis */
+  font-weight: 600; /* Bold text */
+}
+
+/* Special note paragraph styling */
+.instruction-section p:last-child {
+  background-color: rgba(67, 97, 238, 0.1); /* Light primary background */
+  padding: 12px 15px; /* Internal padding */
+  border-radius: 6px; /* Rounded corners */
+  font-size: 0.95rem; /* Slightly smaller text */
+  border-left: 3px solid var(--primary); /* Primary left border */
+}
